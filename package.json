@@ -1,9 +1,9 @@
 {
-  "name": "clear",
+  "name": "wallhaven",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://kozzztia.github.io/clear/",
+  "homepage": "https://kozzztia.github.io/wallhaven/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
