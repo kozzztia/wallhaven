@@ -17,16 +17,9 @@
 body {
   background: var(--body-bg);
   color: var(--color);
-
   font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
   font-weight: 400;
   font-size: var(--font-size);
 }
 
-main{
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
