@@ -1,0 +1,33 @@
+
+
+.header{
+    position: fixed;
+    top : 0;
+    left: 0;
+    right: 0;
+    width :100%;
+    height: var(--header-height);
+    background-color:  inherit;
+    z-index: 9;
+    >*{
+        padding: var(--layout-padding);
+    }
+}
+
+.section{
+    position: relative;
+    border-top: var(--header-height) solid transparent;
+    min-height: calc(200svh - var(--footer-height));
+    top: 0;
+    left:0;
+    right:0;
+    width: 100%;
+
+}
+.footer{
+    position: relative;
+    height: var(--footer-height);
+    >*{
+        padding: var(--layout-padding);
+    }
+}

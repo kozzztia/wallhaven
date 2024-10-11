@@ -1,0 +1,8 @@
+.controllers{
+    position: relative;
+    background-color: #212427;
+    background-image: linear-gradient(to bottom, #292c2f 0, #191c1f 100%);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .75);
+    box-shadow: inset 0 0 0 1px rgba(31, 31, 31, .66), 0 0 10px rgba(0, 0, 0, .75), 0 0 10px rgba(0, 0, 0, .75);
+    z-index: 11;
+}

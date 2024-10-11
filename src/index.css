@@ -1,11 +1,19 @@
 :root {
-  --body-bg: #eee;
-  --color: #555;
-  --title-color : #555;
-  --button-color: #4272d7;
-  --content-bg: #fff;
-  --radius: 10px;
-  --input-bg: #fafafa;
+  --main-background-color: #171717;
+  --main-color: #ddd;
+  --header-height: 60px;
+  --footer-height: 40px;
+  --layout-padding : 10px 60px;
+
+  @media screen and (max-width: 768px) {
+    --layout-padding : 5px 20px;
+  }
+
+  @media screen and (max-width: 480px) {
+    --layout-padding : 5px 10px;
+  }
+  
+  font-size: 10px;
 }
 
 * {
@@ -15,11 +23,14 @@
 }
 
 body {
-  background: var(--body-bg);
-  color: var(--color);
+  background-color: var(--main-background-color);
+  color: var(--main-color);
   font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
   font-weight: 400;
-  font-size: var(--font-size);
+  font-size: 1.6rem;
 }
 
-
+main {
+  min-height: 100svh;
+  position: relative;
+}
