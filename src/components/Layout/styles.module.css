@@ -9,15 +9,21 @@
     height: var(--header-height);
     background-color:  inherit;
     z-index: 9;
+    display: flex;
+    flex-direction: column;
+
     >*{
         padding: var(--layout-padding);
+        flex :1;
     }
 }
-
 .section{
     position: relative;
     border-top: var(--header-height) solid transparent;
-    min-height: calc(200svh - var(--footer-height));
+    min-height: calc(100vh - var(--footer-height));
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
     top: 0;
     left:0;
     right:0;
@@ -27,7 +33,9 @@
 .footer{
     position: relative;
     height: var(--footer-height);
-    >*{
-        padding: var(--layout-padding);
-    }
+    background-color: #212427;
+    background-image: linear-gradient(to bottom, #292c2f 0, #191c1f 100%);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .75);
+    box-shadow: inset 0 0 0 1px rgba(31, 31, 31, .66), 0 0 10px rgba(0, 0, 0, .75), 0 0 10px rgba(0, 0, 0, .75);
+    padding: var(--layout-padding);
 }

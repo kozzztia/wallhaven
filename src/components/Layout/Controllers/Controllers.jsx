@@ -1,13 +1,23 @@
 import styles from "./styles.module.css";
 import PropTypes from 'prop-types';
+import Logo from "../Logo/Logo";
+import { links } from "../../../consts";
+import HeaderLink from '../HeaderLink/HeaderLink';
 
 
-const Controllers = ({ className }) => {
-  return (
-    <form className={`${styles.controllers} ${className}`}>
-        Controllers
-    </form>
-  )
+
+
+const Controllers = () => {
+    return (
+        <div className={styles.controllers}>
+            <Logo />
+            {
+                links.map(link => 
+                    <HeaderLink key={link.id} href={link.href} className={styles.link} text={link.text} />
+                )
+            }
+        </div>
+    )
 }
 Controllers.propTypes = {
     className: PropTypes.string,

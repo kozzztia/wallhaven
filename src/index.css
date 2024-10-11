@@ -1,16 +1,16 @@
 :root {
   --main-background-color: #171717;
   --main-color: #ddd;
-  --header-height: 60px;
-  --footer-height: 40px;
-  --layout-padding : 10px 60px;
+  --header-height: 90px;
+  --footer-height: 60px;
+  --layout-padding : 0 60px;
 
   @media screen and (max-width: 768px) {
-    --layout-padding : 5px 20px;
+    --layout-padding : 0 20px;
   }
 
   @media screen and (max-width: 480px) {
-    --layout-padding : 5px 10px;
+    --layout-padding : 0 10px;
   }
   
   font-size: 10px;

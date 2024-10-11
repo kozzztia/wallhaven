@@ -9,7 +9,7 @@ function Layout({ children }) {
     return (
         <>
             <header className={styles.header}>
-                <Controllers/>
+                <Controllers />
                 <Filters/>
             </header>
 

@@ -2,10 +2,10 @@ import styles from "./styles.module.css";
 import PropTypes from 'prop-types';
 
 
-const Filters = ({ className }) => {
+const Filters = () => {
   return (
-    <nav className={`${styles.filters} ${className}`}>
-        Filters
+    <nav className={styles.filters}>
+        Filterss
     </nav>
   )
 }
