@@ -1,4 +1,16 @@
+:root {
+    --shadow-color: black;
+}
 
-.link{
+
+.link {
     position: relative;
+   
+
+    /* box-shadow: 0 0 10px var(--shadow-color); */
+    &:hover {
+        box-shadow: 0 10px 10px var(--shadow-color);
+        color: var(--shadow-color) !important;
+        
+    }
 }

@@ -13,7 +13,7 @@ const Controllers = () => {
             <Logo />
             {
                 links.map(link => 
-                    <HeaderLink key={link.id} href={link.href} className={styles.link} text={link.text} />
+                    <HeaderLink key={link.id} href={link.href} className={styles.link} text={link.text} color={link.color}/>
                 )
             }
         </div>

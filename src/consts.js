@@ -1,31 +1,31 @@
 export const links = [
     {
         id: "1",
-        color: 'green"',
+        color: 'green',
         href: "latest",
         text: "latest",
     },
     {
         id: "2",
-        color: 'red"',
+        color: 'red',
         href: "hot",
         text: "hot wallpaper",
     },
     {
         id: "3",
-        color: 'violet"',
+        color: 'violet',
         href: "toplist",
         text: "top list",
     },
     {
         id: "4",
-        color: 'orange"',
+        color: 'orange',
         href: "random",
         text: "random",
     },
     {
         id: "5",
-        color: 'blue"',
+        color: 'blue',
         href: "lovely",
         text: "lovely",
     },
