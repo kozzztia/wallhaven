@@ -5,7 +5,7 @@
   --footer-height: 60px;
   --layout-padding : 0 60px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 980px) {
     --layout-padding : 0 20px;
   }
 

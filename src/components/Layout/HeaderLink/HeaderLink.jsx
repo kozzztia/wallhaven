@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
 import styles from "./styles.module.css";
 
+import { NavLink } from "react-router-dom";
+
 const HeaderLink = ({href , className, text , color}) => {
     return (
-        <a href={href} className={`${styles.link} ${className}`} style={{'--shadow-color':color}}>{text}</a>
+        <NavLink to={href} className={({isActive})=>`${isActive ? styles.linkActive : styles.notActive} ${styles.link} ${className}`} style={{'--shadow-color':color}}>
+            {text}
+        </NavLink>
     )
 }
 
