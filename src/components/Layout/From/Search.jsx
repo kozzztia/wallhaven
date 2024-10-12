@@ -9,9 +9,6 @@ import { links } from '../../../consts';
 const Search = () => {
     const [query, setQuery] = useState('');
     const {pathname} = useLocation();
-    console.log(pathname)
-
-
     useEffect(() => {
         // Если длина строки поиска меньше 3 символов, не запускаем поиск
         if (query.length < 3) {

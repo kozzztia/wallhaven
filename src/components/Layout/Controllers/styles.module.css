@@ -49,9 +49,18 @@
         align-items: stretch;
         top: calc(var(--header-height)/2);
         left: 0;
+        transition: all .25s ease;
+        /* centerd by top */
+        transform-origin: top center;
+    }
+    .barLinksClosed{
+        transform: scaleY(0);
+    }
+    .barLinksOpen{
+        transform: scaleY(1);
     }
     .barLink{
-        background: red;
+        padding: 0 20px;
         background-color: #212427;
         background-image: linear-gradient(to bottom, #292c2f 0, #191c1f 100%);
         text-shadow: 1px 1px 3px rgba(0, 0, 0, .75);

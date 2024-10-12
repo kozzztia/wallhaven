@@ -19,8 +19,8 @@ const Controllers = () => {
                 <FontAwesomeIcon icon={faBars} />
             </button>
             {
-                isOpen &&
-                <div className={styles.barLinks}>
+               
+                <div className={`${isOpen ? styles.barLinksOpen : styles.barLinksClosed} ${styles.barLinks}`}>
                     {
                         links.map(link =>
                             <HeaderLink key={link.id} href={link.href} className={styles.barLink} text={link.text} color={link.color} />
