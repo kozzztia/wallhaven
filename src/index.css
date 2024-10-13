@@ -2,7 +2,7 @@
   --main-background-color: #171717;
   --main-color: #ddd;
   --header-height: 90px;
-  --footer-height: 60px;
+  --footer-height: 45px;
   --layout-padding : 0 30px;
 
   @media screen and (max-width: 980px) {

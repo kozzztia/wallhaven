@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 const Filters = () => {
   return (
-    <nav className={styles.filters}>
-        Filterss
-    </nav>
+    <div className={styles.filters}>
+        
+    </div>
   )
 }
 Filters.propTypes = {
