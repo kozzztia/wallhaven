@@ -7,11 +7,14 @@ import Search from "../From/Search";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
+import { useLocation } from "react-router-dom";
+import { findCurrentColor } from '../../../helpers';
 
 
 
 const Controllers = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const {pathname} = useLocation();
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 980) {
@@ -28,7 +31,7 @@ const Controllers = () => {
     return (
         <div className={styles.controllers}>
             <Logo />
-            <button className={styles.burger} onClick={() => setIsOpen(!isOpen)}>
+            <button className={styles.burger} onClick={() => setIsOpen(!isOpen)} style={{color: findCurrentColor(pathname) }}>
                 <FontAwesomeIcon icon={faBars} />
             </button>
             {

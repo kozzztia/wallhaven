@@ -4,7 +4,7 @@ import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 import {useLocation} from "react-router-dom"
 
 import styles from './styles.module.css';
-import { links } from '../../../consts';
+import { findCurrentColor } from '../../../helpers';
 
 const Search = () => {
     const [query, setQuery] = useState('');
@@ -47,9 +47,4 @@ const Search = () => {
 
 export default Search;
 
-
-function findCurrentColor(pathname) {
-    const link = links.find(link => link.href === pathname);
-    return link ? link.color : 'black'; // Устанавливаем черный цвет по умолчанию, если путь не найден
-}
 
