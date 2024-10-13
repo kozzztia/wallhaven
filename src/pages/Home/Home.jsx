@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { useSearchParams } from "react-router-dom";
-// const apiKey = 'Yt0oqU9au5nf2nMpeDXHcHyqdLAxtFoL'; // Ваш API ключ
+
 
 
 const Home = () => {
