@@ -1,6 +1,7 @@
 
 .form{
-    padding: 10px 20px;
+    padding: 10px 0 10px 20px;
+    padding-right: 0;
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -25,5 +26,8 @@
         &:hover{
             transform: scale(1.5);
         }
+    }
+    @media screen and (max-width: 480px) {
+        padding-left: 10px;
     }
 }
