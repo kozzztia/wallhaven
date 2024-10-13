@@ -31,6 +31,7 @@ const Search = () => {
     return (
         <label className={styles.form}>
             <input
+                name='search'
                 type="text"
                 placeholder="Enter search query..."
                 value={query}
