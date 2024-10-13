@@ -1,20 +1,38 @@
 :root {
     --shadow-color: black;
+    --link-height: calc(var(--header-height) / 2);
+    --top: 0;
 }
 
 
 .link {
     position: relative;
-    padding : 0 10px;
-    transition: all .2s ease;
+    padding: 0 10px;
+    transition: box-shadow .2s ease, color .2s ease, left .5s ease;
     white-space: nowrap;
+    height: var(--link-height);
+
     &:hover {
         box-shadow: 0px 10px 30px -10px var(--shadow-color);
         color: var(--shadow-color) !important;
-        transition: all .2s ease;
-        
     }
+
+    @media screen and (max-width: 980px) {
+        left: -200px !important;
+        top: calc((var(--top)) * var(--link-height) + 10px*(var(--top)) + var(--header-height) + 10px) !important;
+        background: #212427 !important;
+        background-image: linear-gradient(to bottom, #292c2f 0, #191c1f 100%);
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, .75);
+        box-shadow: inset 0 0 0 1px rgba(31, 31, 31, .66), 0 0 10px rgba(0, 0, 0, .75), 0 0 10px rgba(0, 0, 0, .75);
+        &:hover {
+            box-shadow: 0px 10px 30px -10px var(--shadow-color);
+            color: var(--shadow-color) !important;
+
+        }
+    }
+
 }
+
 .linkActive {
     box-shadow: 0px 10px 30px -10px var(--shadow-color);
     color: var(--shadow-color) !important;

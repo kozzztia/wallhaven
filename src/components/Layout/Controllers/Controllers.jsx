@@ -6,12 +6,25 @@ import HeaderLink from '../HeaderLink/HeaderLink';
 import Search from "../From/Search";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 
 const Controllers = () => {
     const [isOpen, setIsOpen] = useState(false);
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 980) {
+                setIsOpen(false);
+            }
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [])
+
     return (
         <div className={styles.controllers}>
             <Logo />
@@ -19,18 +32,14 @@ const Controllers = () => {
                 <FontAwesomeIcon icon={faBars} />
             </button>
             {
-               
-                <div className={`${isOpen ? styles.barLinksOpen : styles.barLinksClosed} ${styles.barLinks}`}>
-                    {
-                        links.map(link =>
-                            <HeaderLink key={link.id} href={link.href} className={styles.barLink} text={link.text} color={link.color} />
-                        )
-                    }
-                </div>
-            }
-            {
                 links.map(link =>
-                    <HeaderLink key={link.id} href={link.href} className={styles.link} text={link.text} color={link.color} />
+                    <HeaderLink 
+                    key={link.id} 
+                    href={link.href} 
+                    className={`${isOpen ? styles.linkActive : ""} ${styles.link}`} 
+                    text={link.text} 
+                    color={link.color} 
+                    index={link.id}/>
                 )
             }
             <Search />
