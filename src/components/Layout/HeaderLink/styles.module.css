@@ -18,7 +18,7 @@
     }
 
     @media screen and (max-width: 980px) {
-        left: -200px !important;
+        left: calc((var(--top) + 1) * -300px)!important;
         top: calc((var(--top)) * var(--link-height) + 10px*(var(--top)) + var(--header-height) + 10px) !important;
         background: #212427 !important;
         background-image: linear-gradient(to bottom, #292c2f 0, #191c1f 100%);
