@@ -1,52 +1,30 @@
 import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { useSearchParams } from "react-router-dom";
+import { fetchWallpaper } from '../../getData.js';
+import { findCurrentColor } from '../../helpers';
+import { useLocation } from "react-router-dom";
+import List from '../../components/WallpapperList/List';
 
 
 
 const Home = () => {
     const [params] = useSearchParams();
-    const [posts, setPosts] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [wallpappers, setWallpappers] = useState([]);
+    const { pathname } = useLocation();
     useEffect(() => {
-        const fetchPosts = async () => {
-            try {
-                const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                const data = await response.json();
-                setPosts(data); // Сохраняем полученные посты в состоянии
-            } catch (error) {
-                setError(error.message); // Устанавливаем ошибку в состояние
-            } finally {
-                setLoading(false); // Устанавливаем загрузку в false после завершения
-            }
-        };
-
-        fetchPosts();
+        fetchWallpaper(6).then(result => setWallpappers(wallpappers => [...wallpappers, result]));
     }, [params]);
-
-    if (loading) {
-        return <div>Loading...</div>; // Индикатор загрузки
-    }
-
-    if (error) {
-        return <div>Error: {error}</div>; // Показ ошибки
-    }
-
+    // console.log(wallpappers)
     return (
         <section className={styles.home}>
-            <h1>Posts</h1>
-            <ul>
-                {posts.map(post => (
-                    <li key={post.id}>
-                        <h2>{post.title}</h2>
-                        <p>{post.body}</p>
-                    </li>
-                ))}
-            </ul>
+            <h1 style={{ color: findCurrentColor(pathname) }}>Home</h1>
+            {
+                wallpappers.map((item, index) => (
+                    <List key={index} data={item.data} meta={item.meta} />
+                ))
+            }
+
         </section>
     );
 };
