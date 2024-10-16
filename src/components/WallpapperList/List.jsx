@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import styles from "./styles.module.css";
 
 const List = ({data, meta}) => {
+
   return (
     <>
         <h4 className={styles.page}>{meta}</h4>
@@ -11,7 +12,7 @@ const List = ({data, meta}) => {
                 data?.map(item => {
                     return (
                         <li key={item.id}>
-                            <img src={item.src.medium} alt={item.alt} />
+                            <img src={item.src.tiny} alt={item.alt} />
                         </li>
                     )
                 })

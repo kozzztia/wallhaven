@@ -1,6 +1,7 @@
 import Layout from './components/Layout/Layout';  
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home/Home';
+import Page from './pages/Page/Page';
+import links from './consts';
 
 
 function App() {
@@ -8,11 +9,9 @@ function App() {
     <BrowserRouter basename='/wallhaven/'>
       <Layout>
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/latest" element={<h2>letest</h2>} />
-          <Route path="/toplist" element={<h2>toplist</h2>} />
-          <Route path="/hot" element={<h2>hot</h2>} />
-          <Route path="/random" element={<h2>random</h2>} />
+        {links.map(link => (
+            <Route key={link.id} path={link.href} element={<Page />} />
+          ))}
           <Route path="/lovely" element={<h2>lovely</h2>} />
         </Routes>
       </Layout>

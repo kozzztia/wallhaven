@@ -13,7 +13,7 @@ import { findCurrentColor } from '../../../helpers';
 const Controllers = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { pathname } = useLocation();
-    const menuRef = useRef(null); // Ссылка на элемент меню
+    const menuRef = useRef(null); 
 
     useEffect(() => {
         const handleResize = () => {
