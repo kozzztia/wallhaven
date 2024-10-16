@@ -2,18 +2,16 @@ import PropTypes from 'prop-types';
 import styles from "./styles.module.css";
 
 const List = ({data, meta}) => {
-    console.log(data , meta)
   return (
     <>
-        <h4 className={styles.page}>{meta.current_page}</h4>
+        <h4 className={styles.page}>{meta}</h4>
 
         <ul className={styles.list}>
             {
                 data?.map(item => {
                     return (
                         <li key={item.id}>
-                            <h2>{item.category}</h2>
-                            <img src={item.thumbs.small} alt={item} />
+                            <img src={item.src.medium} alt={item.alt} />
                         </li>
                     )
                 })
@@ -26,7 +24,7 @@ const List = ({data, meta}) => {
 
 List.propTypes = {
     data: PropTypes.array.isRequired,
-    meta: PropTypes.object.isRequired
+    meta: PropTypes.number.isRequired
 }
 
 

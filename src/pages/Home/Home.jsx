@@ -66,7 +66,7 @@ const Home = () => {
             <h1 style={{ color: findCurrentColor(pathname) }}>Home</h1>
             {
                 wallpappers.map((item, index) => (
-                    <List key={index} data={item.data} meta={item.meta} />
+                    <List key={index} data={item.photos} meta={item.page} />
                 ))
             }
 
