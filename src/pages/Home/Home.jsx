@@ -14,8 +14,8 @@ const Home = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);  // Состояние для ошибки
     const observerRef = useRef();
-    const MAX_RETRIES = 100;  // Максимальное количество попыток
-    const RETRY_DELAY = 20000;  // Задержка перед новой попыткой (в миллисекундах)
+    const MAX_RETRIES = 3;  // Максимальное количество попыток
+    const RETRY_DELAY = 2000;  // Задержка перед новой попыткой (в миллисекундах)
 
     // Функция для загрузки данных с повторными попытками
     const loadWallpapers = useCallback(async (page, retries = 0) => {
