@@ -1,26 +1,21 @@
-import { useEffect } from 'react';
+
 import styles from './styles.module.css';
 import { useSearchParams, useLocation } from "react-router-dom";
-// import { findCurrentColor } from '../../helpers';
-import {links} from "../../consts"; // Импортируем массив links
+import {PageLayout} from "../../components";
 
-const Home = () => {
+const Page = () => {
     const [params] = useSearchParams();
     const { pathname } = useLocation();
-
-    // Находим текущую ссылку на основе пути
-    const currentLink = links.find(link => link.href === pathname);
     
     return (
-        <section className={styles.home}>
-            <h1 style={{ color: currentLink ? currentLink.color : 'black' }}>Home</h1>
-
-            <div>
+        <PageLayout className={styles.page}>
                 <p>Current path: {pathname.split('/')}</p>
-                <p>Current link color: {currentLink ? currentLink.color : 'No color found'}</p>
-            </div>
-        </section>
+                {
+                    params.get('search') && <p>Search query: {params.get('search')}</p>
+                }
+        </PageLayout>
     );
 };
 
-export default Home;
+
+export default Page;

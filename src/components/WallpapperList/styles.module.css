@@ -1,9 +1,0 @@
-.list{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.page{
-    font-size: 20px;
-}
