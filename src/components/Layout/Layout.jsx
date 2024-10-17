@@ -18,7 +18,7 @@ function Layout({ children }) {
             </section>
 
             <footer className={styles.footer}>
-                footer
+                thnq
             </footer>
         </>
     )

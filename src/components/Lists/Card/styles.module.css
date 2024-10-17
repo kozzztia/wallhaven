@@ -2,6 +2,7 @@
     width: 100%;
     height: 300px;
     perspective: 1000px; /* Параметр для 3D-эффекта */
+    cursor: pointer;
 }
 
   
@@ -22,16 +23,18 @@
     border-radius: 12px; /* Закругленные углы */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень */
     display: flex; /* Флекс для центрирования содержимого */
-    align-items: center; /* Выравнивание по вертикали */
-    justify-content: center; /* Выравнивание по горизонтали */
+    align-items: start; /* Выравнивание по вертикали */
+    justify-content: start; /* Выравнивание по горизонтали */
     background: var(--main-background-color);
     flex-direction: column;
   }
   
   .cardBack {
+
     transform: rotateY(180deg); /* Переворачиваем заднюю сторону */
     text-align: center; /* Выравнивание текста по центру */
     padding: 16px; /* Отступы для задней стороны */
+    position: relative;
   }
   
   .flipped .cardInner {
@@ -50,15 +53,28 @@
     color: #007BFF; /* Цвет ссылки */
     text-decoration: none; /* Убираем подчеркивание */
   }
+  .photographer {
+    color: #007BFF; /* Цвет ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+    position: absolute;
+    top :50%;
+    a{
+      margin-left: 10px;
+      white-space: nowrap;
+    }
+  }
   
   .link:hover {
     text-decoration: underline; /* Подчеркивание при наведении */
   }
   
   .downloadLink {
+    position: absolute;
     margin-top: 8px; /* Отступ сверху для ссылки загрузки */
     color: #007BFF; /* Цвет ссылки загрузки */
     text-decoration: none; /* Убираем подчеркивание */
+    bottom: 20px;
+    right: 20px;
   }
   
   .downloadLink:hover {

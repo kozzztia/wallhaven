@@ -20,8 +20,8 @@ export const links = [
     {
         id: "3",
         color: 'violet',
-        href: "/toplist",
-        text: "top",
+        href: "/large",
+        text: "large",
     },
     {
         id: "4",

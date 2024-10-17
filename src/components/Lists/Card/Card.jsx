@@ -17,8 +17,8 @@ const Card = ({ photo }) => {
         </div>
         <div className={styles.cardBack}>
           <h3>Additional Info</h3>
-          <p>{photo.alt}</p>
-          <p>Photo by: 
+          {photo.alt && <p>{photo.alt}</p>}
+          <p className={styles.photographer}>Photo by: 
             <a 
               href={photo.photographer_url} 
               target="_blank" 

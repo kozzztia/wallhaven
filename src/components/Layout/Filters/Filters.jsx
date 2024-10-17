@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Filters = () => {
   return (
     <div className={styles.filters}>
-        
+        <h2>use pexels api</h2>
     </div>
   )
 }
