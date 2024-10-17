@@ -1,4 +1,21 @@
 
 .home{
-    color : var(--main-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2{
+        width: 100%;
+    }
+    .wallpaperList{
+        background: #000;
+    }
+
+    .spinner{
+        color : var(--main-color);
+        width : 100px;
+        height: 100%;
+        margin : 0 auto;
+    }
 }

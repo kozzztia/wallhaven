@@ -13,17 +13,17 @@ const Search = () => {
     useEffect(() => {
         // Если длина строки поиска меньше 3 символов, не запускаем поиск and clear ?search param
         if (query.length < 3) {
-            navigate(``);
+            navigate(pathname);
             return;
         }
         // Таймер на 500 мс (debounce) перед вызовом поиска
         const timerId = setTimeout(() => {
-            navigate(`?search=${encodeURIComponent(query)}`)
+            navigate(`${pathname}?search=${encodeURIComponent(query)}`)
         }, 500);
 
         // Очищаем таймер, если пользователь продолжает вводить текст
         return () => clearTimeout(timerId);
-    }, [query, navigate]);
+    }, [query, navigate, pathname]);
 
     return (
         <label className={styles.form}>

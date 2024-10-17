@@ -1,9 +1,9 @@
 import { PropTypes } from 'prop-types'
+import styles from './styles.module.css'
 
-const WallpaperList = ({photos, page}) => {
-    console.log(photos)
+const WallpaperList = ({photos, page, className}) => {
   return (
-    <div>
+    <div className={[className, styles.listWrapper].join(' ')}>
         <p>{page}</p>
         <ul>
             {photos.map((photo) => (
@@ -18,7 +18,8 @@ const WallpaperList = ({photos, page}) => {
 
 WallpaperList.propTypes = {
   photos: PropTypes.array.isRequired,
-  page: PropTypes.number.isRequired
+  page: PropTypes.number.isRequired,
+  className: PropTypes.string
 }
 
 export default WallpaperList
