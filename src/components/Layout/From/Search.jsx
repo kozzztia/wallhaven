@@ -11,8 +11,9 @@ const Search = () => {
     const {pathname} = useLocation();
     const navigate = useNavigate();
     useEffect(() => {
-        // Если длина строки поиска меньше 3 символов, не запускаем поиск
+        // Если длина строки поиска меньше 3 символов, не запускаем поиск and clear ?search param
         if (query.length < 3) {
+            navigate(``);
             return;
         }
         // Таймер на 500 мс (debounce) перед вызовом поиска
