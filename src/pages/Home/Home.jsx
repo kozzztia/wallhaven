@@ -106,16 +106,16 @@ const Home = () => {
   return (
     <PageLayout className={styles.home} getColor={setColor}>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      {wallpaper.length > 0 && wallpaper.map((wallpaper, index) => (
+      {wallpaper.length > 0 ? wallpaper.map((wallpaper, index) => (
         <WallpaperList
           key={index}
           photos={wallpaper.photos}
           page={wallpaper.page}
           className={styles.wallpaperList}
         />
-      ))}
+      )):<p className={styles.nothing}>nothing found</p>}
       {wallpaper.length > 0 && hasMoreData && ( // Показываем observe только если есть обои и еще есть данные
-        <div ref={ref}>observe</div>
+        <div ref={ref}></div>
       )}
 
       {loading && hasMoreData && ( // Прелоадер показываем только при наличии данных

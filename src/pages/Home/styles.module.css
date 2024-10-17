@@ -9,9 +9,15 @@
         width: 100%;
     }
     .wallpaperList{
-        background: #000;
+       position: relative;
+       width: 100%
     }
-
+    .nothing{
+        color : var(--main-color);
+        font-size: 3rem;
+        text-align: center;
+        text-transform: capitalize;
+    }
     .spinner{
         color : var(--main-color);
         width : 100px;

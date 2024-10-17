@@ -1,14 +1,57 @@
-.listWrapper{
+.listWrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
-    ul{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
+    background: inherit;
+    p{
+        width: 100%;
+        text-align: start;
+        font-size: 1.5rem;
+        color: var(--main-color);
+        margin: 0;
+        padding: 10px 0;
     }
-}
+    
+    ul {
+      width: 100%;
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 16px;
+      padding: 0;
+  
+      .card {
+        flex: 1 1 calc(20% - 16px); /* 5 карточек в ряд (10 делится на 5) */
+        max-width: calc(20% - 16px);
+        box-sizing: border-box;
+        margin-bottom: 16px; /* Добавляем отступы снизу */
+        border-radius: 3px; /* Закругление углов */
+      }
+  
+      /* Если карточек меньше 5 в последней строке, центрируем их */
+      .card:nth-last-child(-n+5) {
+        align-self: stretch;
+      }
+    }
+  }
+  
+  /* Медиа-запрос для планшетов — 2 карточки в ряд */
+  @media (max-width: 1100px) {
+    .listWrapper ul .card {
+      flex: 1 1 calc(50% - 16px); /* Для экранов до 768px — 2 карточки в ряд */
+      max-width: calc(50% - 16px);
+    }
+  }
+  
+  /* Медиа-запрос для мобильных устройств — 1 карточка в ряд */
+  @media (max-width: 480px) {
+    .listWrapper ul .card {
+      flex: 1 1 calc(100% - 16px); /* Для экранов до 480px — 1 карточка в ряд */
+      max-width: calc(100% - 16px);
+    }
+  }
+  

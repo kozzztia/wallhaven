@@ -1,14 +1,15 @@
 import { PropTypes } from 'prop-types'
 import styles from './styles.module.css'
+import Crad from './Card/Card'
 
 const WallpaperList = ({photos, page, className}) => {
   return (
     <div className={[className, styles.listWrapper].join(' ')}>
-        <p>{page}</p>
+        <p>Pge number : {page}</p>
         <ul>
             {photos.map((photo) => (
-                <li key={photo.id}>
-                    <img src={photo.src.tiny} alt={photo.alt} />
+                <li key={photo.id} className={styles.card}>
+                  <Crad photo={photo} />
                 </li>
             ))}
         </ul>
